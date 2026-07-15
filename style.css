@@ -30,9 +30,14 @@ body {
 /* ========================= */
 
 main {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
     width: 98%;
+    min-height: 80dvh;
   
 
     background: rgb(235, 236, 210);
@@ -49,7 +54,7 @@ main {
 .logo {
     width: 90%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 /* ========================= */
@@ -57,9 +62,9 @@ main {
 /* ========================= */
 
 main p {
-    font-size: 10px;
+    font-size: 1.5em;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 /* ========================= */
@@ -71,20 +76,28 @@ main p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 30px;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
 .btnUpload,
 .btnCamera,
 .btnEnviar {
-    width: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    height: 70px;
     background: #f69d04;
     color: white;
-    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 2em;
     border: 1px solid #bd8d38;
     transition: 0.2s;
 }
@@ -103,7 +116,7 @@ main p {
 
 .fileName {
     margin-top: 15px;
-    font-size: 12px;
+    font-size: 2em;
     font-weight: bold;
     color: #333;
 }
@@ -113,14 +126,15 @@ main p {
 /* ========================= */
 
 .btnEnviar {
-    width: 160px;
-    height: 50px;
+    width: 60%;
+    height: 70px;
     background: #026a1c;
     color: white;
-    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 2em;
     border: 1px solid #bd8d38;
     transition: 0.2s;
 }
@@ -134,12 +148,14 @@ main p {
 }
 
 #btnReset {
+    width: 50%;
+    height: 50px;
     background: #f44336;
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 1.7em;
     margin-top: 10px;
     transition: 0.2s;
 }
@@ -180,14 +196,14 @@ main p {
 
 #resultContainer h2 {
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 2em;
     color: #333;
 }
 
 #resultContainer h3 {
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 1.7em;
     color: #444;
 }
 
