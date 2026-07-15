@@ -46,38 +46,58 @@ fileInput.onchange = () => {
 
 
 // =========================
-// CAPTURA DE FOTO VIA CÂMERA
+// CAPTURA DE FOTO VIA CÂMERA 
 // =========================
+
 btnCamera.onclick = async () => {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" } // câmera traseira
+        });
 
-    video.srcObject = stream;
-    video.style.display = "block";
+        video.srcObject = stream;
+        video.style.display = "block";
 
-    video.onclick = () => {
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
+        btnCamera.textContent = "Capturar Foto";
 
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(video, 0, 0);
+        // Agora o botão captura a foto, não o vídeo
+        btnCamera.onclick = () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
 
-        canvas.toBlob((blob) => {
-            fotoCapturada = blob;
-            arquivoSelecionado = null;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(video, 0, 0);
 
-            fileName.innerText = "Foto capturada";
+            canvas.toBlob((blob) => {
+                fotoCapturada = blob;
+                arquivoSelecionado = null;
 
-            // Mostrar imagem inicial
-            imagemInicial.src = URL.createObjectURL(blob);
+                fileName.innerText = "Foto capturada";
 
-            btnUpload.style.display = "none";
-            btnCamera.style.display = "none";
-            btnReset.style.display = "inline-block";
-        }, "image/jpeg");
+                // Mostrar imagem inicial
+                imagemInicial.src = URL.createObjectURL(blob);
 
-        stream.getTracks().forEach(track => track.stop());
-        video.style.display = "none";
-    };
+                btnUpload.style.display = "none";
+                btnCamera.style.display = "none";
+                btnReset.style.display = "inline-block";
+            }, "image/jpeg");
+
+            // Desliga a câmera
+            stream.getTracks().forEach(track => track.stop());
+            video.style.display = "none";
+
+            // Restaura o botão para tirar outra foto depois
+            btnCamera.textContent = "Tirar Foto";
+            btnCamera.onclick = async () => {
+                // reinicia o fluxo
+                btnCamera.click();
+            };
+        };
+
+    } catch (error) {
+        alert("Erro ao acessar a câmera");
+        console.error(error);
+    }
 };
 
 
