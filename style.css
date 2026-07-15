@@ -21,7 +21,8 @@ body {
     text-align: center;
     padding: 40px;
     background: #f5f5f5;
-    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100dvw;
 }
 
 /* ========================= */
@@ -34,7 +35,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    width: 95%;
+    width: 100%;
     max-width: 600px;
 
     background: rgb(235, 236, 210);
@@ -49,9 +50,9 @@ main {
 /* ========================= */
 
 .logo {
-    width: 60%;
+    width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* ========================= */
@@ -59,9 +60,9 @@ main {
 /* ========================= */
 
 main p {
-    font-size: 14px;
+    font-size: 10px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* ========================= */
@@ -80,13 +81,13 @@ main p {
 .btnUpload,
 .btnCamera,
 .btnEnviar {
-    width: 200px;
+    width: 150px;
     background: #f69d04;
     color: white;
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     border: 1px solid #bd8d38;
     transition: 0.2s;
 }
@@ -105,7 +106,7 @@ main p {
 
 .fileName {
     margin-top: 15px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: #333;
 }
@@ -115,14 +116,14 @@ main p {
 /* ========================= */
 
 .btnEnviar {
-    width: 250px;
+    width: 160px;
     height: 50px;
     background: #026a1c;
     color: white;
     padding: 5px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 12px;
     border: 1px solid #bd8d38;
     transition: 0.2s;
 }
@@ -141,7 +142,7 @@ main p {
     padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     margin-top: 10px;
     transition: 0.2s;
 }
@@ -182,14 +183,14 @@ main p {
 
 #resultContainer h2 {
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 12px;
     color: #333;
 }
 
 #resultContainer h3 {
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 12px;
     color: #444;
 }
 
@@ -210,10 +211,10 @@ main p {
 #imagemInicial,
 #imagemContada {
     width: 100%;
-    max-width: 350px;
+    
     border-radius: 8px;
     border: 2px solid #ccc;
-    margin-bottom: 20px;
+   
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -221,7 +222,7 @@ main p {
 /* RESPONSIVO PARA PC */
 /* ========================= */
 
-@media (min-width: 600px) {
+@media (min-width: 25200px) {
 
     main {
         max-width: 60%;
