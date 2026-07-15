@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conta Dentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>
+            <img src="titulo.png" alt="Logo" class="logo">
+        </h1>
+
+        <p>
+            Envie ou tire uma foto de engrenagem e contamos os dentes para você!
+        </p>
+
+        <div class="inputs">
+            <label for="fileInput" class="btnUpload">Escolher Imagem</label>
+            <input type="file" id="fileInput" accept="image/*">
+
+            <button id="btnCamera" class="btnCamera">Tirar Foto</button>
+
+            <video id="video" autoplay playsinline style="display:none;"></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+
+            <p id="fileName" class="fileName"></p>
+        </div>
+
+        <button class="btnEnviar" id="btnEnviar">Contar Dentes</button>
+
+        <button id="btnReset" style="display:none;">Escolher outra imagem</button>
+
+        <div id="resultContainer" style="display:none;">
+            <h2 id="resultado"></h2>
+
+            <div class="images-container">
+                <div class="image-drop">
+                    <h3>Imagem enviada:</h3>
+                    <img id="imagemInicial">
+                </div>
+
+                <div class="image-drop">
+                    <h3>Imagem processada:</h3>
+                    <img id="imagemContada">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
